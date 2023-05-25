@@ -1,0 +1,153 @@
+@font-face {
+    font-family: digital7-mono;
+    src: url("fonts/Digital7Mono-Yz9J4.ttf") format("ttf");
+    src: url("fonts/Digital-7.woff") format("woff");
+}
+ 
+html, body {
+    margin: 0;
+}
+
+body {
+    background-color: #2e443f;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(179, 179, 179);
+    text-align: center;
+    margin-top: 150px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px 1px black, inset 0px 0px 5px 3px rgb(230, 230, 230);
+    font-weight: 500;
+}
+
+#headers {
+    background-color: rgb(48, 48, 48);
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Kanit';
+}
+
+#screenpad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(48, 48, 48);
+}
+
+#screen {
+    background-color: rgb(172, 255, 172);
+    height: 50px;
+    width: 315px;
+    color: black;
+    font-family: digital7-mono;
+    font-size: 40px;
+    margin: 5px;
+    text-align: right;
+    line-height: 50px;
+}
+
+#rim {
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 23px;
+}
+
+#pads {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+}
+
+#numpad {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 186px;
+}
+
+#operatorpad {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 248px;
+    margin-left: 15px;
+}
+
+#add {
+    height: 120px;
+    line-height: 120px;
+}
+
+
+
+.buttons {
+    background-color: white;
+    color: black;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    line-height: 59px;
+    box-shadow: inset -2px -2px 1px 1px rgb(200,200,200), inset 1px 1px 1px 1px rgb(202, 202, 202);
+    border-radius: 7px;
+    margin: 1px;
+}
+
+#numpad .buttons {
+    background-color: grey;
+    box-shadow: inset -2px -2px 1px 1px rgb(100, 100, 100), inset 1px 1px 1px 1px rgb(202, 202, 202);
+}
+
+.buttons:hover, #numpad .buttons:hover {
+    background-color: rgb(224, 224, 224);
+    box-shadow:none;
+}
+
+#allclear, #clear {
+    background-color: rgb(160, 0, 0);
+    color: white;
+}
+
+#allclear:hover, #clear:hover {
+    background-color: rgb(160, 81, 81);
+}
+
+#staf {
+    color: white;
+}
+
+#github img{
+    height: 23px;
+    width: 23px;
+}
+
+#github img:hover {
+    transform: scale(1.3);
+}
+
+#solar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+}
+
+.panel {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(109, 72, 55);
+    border: 1px solid rgb(80, 44, 33);
+}
