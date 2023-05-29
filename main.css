@@ -27,6 +27,12 @@ body {
     font-weight: 500;
 }
 
+@media (max-width: 810px) {
+    #calculator {
+        margin-top: 20px;
+    }
+}
+
 #headers {
     background-color: rgb(48, 48, 48);
     padding-top: 30px;
