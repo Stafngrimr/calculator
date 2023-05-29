@@ -151,7 +151,7 @@ body {
     background-color: rgb(160, 81, 81);
 }
 
-#staf {
+#stafio {
     color: white;
 }
 
@@ -176,4 +176,14 @@ body {
     width: 25px;
     background-color: rgb(109, 72, 55);
     border: 1px solid rgb(80, 44, 33);
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+footer a {
+    color: white;
 }

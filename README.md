@@ -1,5 +1,6 @@
-# calculator
-TOP project
+# Calculator
+
+Made as part of the ODIN project Foundations course
 
 Working calculator, some things that could be improved:
 
