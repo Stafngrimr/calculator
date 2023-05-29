@@ -4,6 +4,9 @@
 let firstNumber;
 let secondNumber;
 let oper;
+
+// Var declaration for if ther is already a decimal point + if the equals sign has been pressed
+let decOn = 0;
 let finalResult = 0;
 
 // Operator Functions
@@ -187,14 +190,18 @@ dzero.addEventListener("click", () => {
     }
 });
 
+
 decimal.addEventListener("click", () => {
-    if (finalResult == 0 && dispValue.textContent != "") {
+    if (finalResult == 0 && dispValue.textContent != "" && decOn == 0) {
         dispValue.textContent += ".";
-    } else if (finalResult == 0 && dispValue.textContent == "") {
+        decOn = 1;
+    } else if (finalResult == 0 && dispValue.textContent == "" && decOn == 0) {
         dispValue.textContent = "0.";
-    } else if (finalResult == 1) {
+        decOn = 1;
+    } else if (finalResult == 1 && decOn == 0) {
         allClear();
         dispValue.textContent += "0.";
+        decOn = 1;
     }
 });
 
@@ -212,6 +219,7 @@ add.addEventListener("click", function() {
         oper = "+";
         dispValue.textContent = "";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
+        decOn = 0;
     } else if (dispValue.textContent != "" && firstNumber != undefined && finalResult == 0) {
         secondNumber = Number (dispValue.textContent);
         firstNumber = operate(firstNumber, secondNumber, oper);
@@ -219,11 +227,13 @@ add.addEventListener("click", function() {
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         secondNumber = undefined;
+        decOn = 0;
     } else if (finalResult == 1 ) {
         oper = "+";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         finalResult = 0;
+        decOn = 0;
     }
 });
 
@@ -234,6 +244,7 @@ subtract.addEventListener("click", function() {
         oper = "-";
         dispValue.textContent = "";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
+        decOn = 0;
     } else if (dispValue.textContent!= "" && firstNumber != undefined && finalResult == 0) {
         secondNumber = Number (dispValue.textContent);
         firstNumber = operate(firstNumber, secondNumber, oper);
@@ -241,11 +252,13 @@ subtract.addEventListener("click", function() {
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         secondNumber = undefined;
+        decOn = 0;
     } else if (finalResult == 1 ) {
         oper = "-";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         finalResult = 0;
+        decOn = 0;
     }
 });
 
@@ -256,6 +269,7 @@ multiply.addEventListener("click", function() {
         oper = "*";
         dispValue.textContent = "";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
+        decOn = 0;
     } else if (dispValue.textContent!= "" && firstNumber != undefined && finalResult == 0) {
         secondNumber = Number (dispValue.textContent);
         firstNumber = operate(firstNumber, secondNumber, oper);
@@ -263,11 +277,13 @@ multiply.addEventListener("click", function() {
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         secondNumber = undefined;
+        decOn = 0;
     } else if (finalResult == 1 ) {
         oper = "*";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         finalResult = 0;
+        decOn = 0;
     }
 });
 
@@ -278,6 +294,7 @@ divide.addEventListener("click", function() {
         oper = "/";
         dispValue.textContent = "";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
+        decOn = 0;
     } else if (dispValue.textContent!= "" && firstNumber != undefined && finalResult == 0) {
         if (dispValue.textContent == "0" || dispValue.textContent == "00") {
             littleDispValue.textContent = "WTF ARE YOU DOING";
@@ -291,18 +308,20 @@ divide.addEventListener("click", function() {
             dispValue.textContent = "";
             secondNumber = undefined;
         }
+        decOn = 0;
         
     } else if (finalResult == 1 ) {
         oper = "/";
         littleDispValue.textContent = `${firstNumber} ${oper}`;
         dispValue.textContent = "";
         finalResult = 0;
+        decOn = 0;
     }
 });
 
 // Equals button input
 equals.addEventListener("click", function() {
-    if (dispValue.textContent != "" && firstNumber != undefined && oper != undefined) {
+    if (dispValue.textContent != "" && firstNumber != undefined && oper != undefined && finalResult == 0) {
         if (dispValue.textContent == "0" || dispValue.textContent == "00") {
             littleDispValue.textContent = "WTF ARE YOU DOING";
             dispValue.textContent = "3rr9r";
@@ -322,6 +341,7 @@ equals.addEventListener("click", function() {
             secondNumber = undefined;
             finalResult = 1;
         }
+        decOn = 0;
     }
 });
 
@@ -333,4 +353,5 @@ function allClear() {
     dispValue.textContent = "";
     littleDispValue.textContent = "";
     finalResult = 0;
+    decOn = 0;
 }
